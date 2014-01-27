@@ -6,13 +6,10 @@ Twetter::Application.routes.draw do
   authenticated :user do
     resources :follows, :except => [:new, :edit, :show, :update]
     resources :twets, :except => [:new, :edit, :show, :update]
-    resources :users, :except => [:index, :new, :create, :edit, :update, :destroy] # only allow routes to the users show page right now
+    get 'users/:id' => 'users#show'
     root :to => 'follows#index', :as => :user_root
   end
 
-  # Configure route for User Show page
-  
-  
   # You can have the root of your site routed with "root"
   root :to => 'home#index'
 
