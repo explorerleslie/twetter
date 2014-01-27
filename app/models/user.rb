@@ -22,7 +22,7 @@ class User < ActiveRecord::Base
     Twet.by_user_ids(id, *follows.map(&:following_id))
   end
   
-  def twets
+  def current_users_twets
     Twet.by_user_ids(id)
   end
   
