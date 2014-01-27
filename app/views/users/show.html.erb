@@ -17,7 +17,7 @@
         <%= content_tag :small, twet.created_at.strftime("%b %-d"), :class => 'text-muted text-middle pull-right' %>
         <div class="clearfix"></div>
           <% content_tag :p, twet.content.gsub(/(\s|^)@\S+/, " AT-USERNAME ") %>
-          <p><%= raw twet.content.gsub(/(@\S+)/, link_to('\1', 'http://guides.rubyonrails.org/')) %></p>
+          <p><%= raw twet.content.gsub(/@(\S+)/, link_to('@' + '\1', "/" + "\\1")) %></p>
       </li>
       <li><hr></li>
       <% end %>
