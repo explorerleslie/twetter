@@ -21,4 +21,9 @@ class User < ActiveRecord::Base
   def all_twets
     Twet.by_user_ids(id, *follows.map(&:following_id))
   end
+  
+  def twets
+    Twet.by_user_ids(id)
+  end
+  
 end
