@@ -18,7 +18,7 @@
         <div class="clearfix"></div>
           <% content_tag :p, twet.content.gsub(/(\s|^)@\S+/, " AT-USERNAME ") %>
           <% content_tag :p, twet.content.gsub(/(\s|^)@\S+/, link_to_if(User.exists?(['username like ?', '\1']), '@' + '\1', "/" + "\\1")) %>
-          <p><%= raw twet.content.gsub(/@(\S+)/, link_to('@' + '\1', "/" + '\1')) %></p>
+          <p><%= raw twet.content.gsub(/@(\S+)/, link_to('@' + '\1', '\1')) %></p>
       </li>
       <li><hr></li>
       <% end %>
