@@ -10,7 +10,7 @@
     <div class="clearfix"></div>
     <hr />
     <ol class="list-unstyled">
-      <% @twets.each do |twet| -%>
+      <% @twets.each do |twet| %>
       <li>
         <%= content_tag :strong, twet.user.name, :class => 'pull-left text-middle' %>
         <%= content_tag :small, "@"+twet.user.username, :class => 'text-muted pad-10 text-middle' %>
@@ -19,7 +19,7 @@
         <p><%= raw format_mentions(twet) %></p>
       </li>
       <li><hr></li>
-      <% end -%>
+      <% end %>
     </ol>
   </div>
 </div>
