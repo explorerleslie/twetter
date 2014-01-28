@@ -1,7 +1,7 @@
 module TwetsHelper
     
-  def format_mentions(twet)
-    twet.content.gsub(/(?<start>[>|\s])@(?<username>(\w+))/, '\k<start><a href="/\k<username>">@\k<username></a>')
+  def format_mentions(twet_content)
+    twet_content.gsub(/(?<start>[>|\s])@(?<username>(\w+))/, '\k<start><a href="/\k<username>">@\k<username></a>')
     
     # twet_split = twet.content.split(" ")
     # twet_split.each do |word|
