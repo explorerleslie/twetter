@@ -52,3 +52,8 @@ group :development, :test do
   # Use Shoulda Matchers for validation and association testing: https://github.com/thoughtbot/shoulda-matchers
   gem 'shoulda-matchers'
 end
+
+group :production do
+  gem 'rails_12factor'
+  gem 'pg'
+end
